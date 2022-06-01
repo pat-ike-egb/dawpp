@@ -8,10 +8,11 @@ CPMAddPackage("gh:juce-framework/JUCE#develop")
 
 find_package( CURL REQUIRED )
 
-# add the executable
-add_executable(JUCE_Example src/example.cpp)
+# acompile the library
+add_library( JUCE_Example dawpp)
 
 # Link dependencies
 target_link_libraries( JUCE_Example PRIVATE CURL::libcurl )
 target_link_libraries( JUCE_Example PRIVATE juce_core )
+target_link_libraries( JUCE_Example PRIVATE juce_audio_basics )
 
